@@ -1,0 +1,130 @@
+/* reset CSS*/
+
+* {
+    margin: 0;
+    padding 0;
+    border: 0;
+    /* box-sizing property is used to tell the brower what the sizing properties (width and height) should include border-box*/
+    box-sizing: border-box;
+}
+
+html {
+    background: url("bg-image.jpg") center no-repeat fixed;
+    background-size: cover;
+}
+
+body {
+    font-family: 'Vollkorn SC', serif;
+
+
+    color: #fff;
+    text-shadow: 2px 3px #000000;
+    font-family: 'Bigelow Rules', cursive;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 35px;
+}
+
+p {
+    font-size: 35px;
+}
+
+
+.intro {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px 20px;
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 0 8px 3px #fff;
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    font-size: 35px;
+}
+
+.column {
+    display: inline-block;
+    width: 80%;
+    margin-top: 1rem;
+    vertical-align: middle;
+}
+
+.column-radio {
+    width: 20%;
+    text-align: center;
+}
+
+.column-radio input {
+    vertical-align: middle;
+}
+
+.quiz {
+    display: block;
+    margin: 1rem auto;
+    width: 500px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 8px 3px #fff;
+    line-height: 30px;
+    font-size: 35px;
+}
+
+h2 {
+    line-height: initial;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    line-height: 50px;
+}
+
+button {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 8px 3px #fff;
+    font-size: 20px;
+    color: white;
+    margin: 2rem auto;
+    display: block
+}
+
+
+.results-section {
+    text-align: center;
+    line-height: 40px;
+    font-size: 35px;
+    display: block;
+    margin: 1rem auto;
+    width: 500px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 8px 3px #fff;
+    font-size: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+    .intro,
+    .quiz,
+    .results-section {
+        background: rgba(255, 255, 255, 0.3);
+        padding: 20px 20px;
+        width: 95%;
+        border-radius: 10px;
+        box-shadow: 0 0 8px 3px #fff;
+        text-align: center;
+        display: block;
+        margin: 1rem auto;
+        font-size: 25px;
+    }
+}
