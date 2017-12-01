@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Harry Potter Quiz</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Bigelow+Rules" rel="stylesheet">
+
+</head>
+
+<body>
+    <header role="banner">
+        <h1>Wizarding World of Harry Potter</h1>
+    </header>
+
+    <section class="intro" style="display:block;" role="main">
+        <h2>Enter the World of Harry Potter</h2>
+        <p>How much do you know the magical world of Harry Potter? <br>Let's find out!<br/></p>
+        <button class="start-button">Let's Begin!</button>
+    </section>
+
+    <section class="quiz" style="display: none;" role="main">
+        <form id="answers-wrapper">
+            <h2 class="question">Who is the "Boy that Lived"?</h2>
+            <fieldset id="choices">
+
+                <input class="option" type="radio" value="0" name="option">
+                <br>
+                <input class="option" type="radio" value="1" name="option">
+                <br>
+                <input class="option" type="radio" value="2" name="option">
+                <br>
+                <input class="option" type="radio" value="3" name="option">
+                <br>
+
+            </fieldset>
+            <button class="form-submit" type="submit">Next</button>
+        </form>
+
+
+        <!--
+            <div class="answers-wrapper">
+
+            <div class="column column-radio" role="list">
+            <input type="radio" class="option" name="option"></div>
+
+            <div class="column"><label for="answer1" class="column">Ron Weasley</label></div>
+
+
+            <div class="column column-radio"><input type="radio" class="option" name="option"></div>
+            <div class="column"><label for="answer2">Harry Potter</label></div>
+
+
+            <div class="column column-radio"><input type="radio" class="option" name="option"></div>
+            <div class="column"><label for="answer3">Neville Longbottom</label></div>
+
+
+            <div class="column column-radio"><input type="radio" class="option" name="option"></div>
+            <div class="column"><label for="answer4">Albus Dumbledore</label></div>
+
+        </div>
+-->
+
+
+        <div class="form-errors">
+            <h3 class="current-question" id="questionNumberDisplay">Question 1/10</h3>
+            <h3 class="current-question" id="questionScore">Question 1/10</h3>
+            <h3 class="current-question" id="correctAnswerDetails"></h3>
+            <h3 class="correctAnswers"></h3>
+        </div>
+
+    </section>
+
+    <section class="results-section" style="display: none;" role="main">
+        <h3 class="final-score">Your Results!</h3>
+        <h3 class="final-score" id="final-score">1/10</h3>
+        <div id="quiz-answers"></div>
+
+        <button class="try-again">Try Again</button>
+    </section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
