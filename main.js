@@ -12,21 +12,21 @@ var questionsArray = [
     {
         questionText: 'Who is the "greatest headmaster" Hogwarts ever had?',
         questionChoices: ['Severus Snape', 'Dolores Umbridge', 'Albus Dumbledore', 'Tom Riddle'],
-        questionCorrectChoice: 3,
+        questionCorrectChoice: 2,
         correctDetails: 'Albus Dumbledore'
     },
     //question3
     {
         questionText: 'Who is "He Who Shall Not Be Named"?',
-        questionChoices: ['Harry Potter', 'Ron Weasley', 'Voldemort', 'Severus Snape'],
-        questionCorrectChoice: 3,
+        questionChoices: ['Harry Potter', 'Ron Weasley', 'Lord Voldemort', 'Severus Snape'],
+        questionCorrectChoice: 2,
         correctDetails: 'Lord Voldemort'
     },
     //question4
     {
         questionText: 'What is the name of the platform the Hogwart Express leaves from?',
         questionChoices: ['9 1/2', '9 2/5', '9 3/4', '9'],
-        questionCorrectChoice: 3,
+        questionCorrectChoice: 2,
         correctDetails: '9 3/4'
     },
     //question5
@@ -40,7 +40,7 @@ var questionsArray = [
     {
         questionText: 'Which house is Neville Longbottom in?',
         questionChoices: ['Slytherin', 'Gryffindor', 'Hogwarts', 'Ravenclaw'],
-        questionCorrectChoice: 1,
+        questionCorrectChoice: 0,
         correctDetails: 'Gryffindor'
     },
     //question7
@@ -95,16 +95,23 @@ function displayQuestion() {
     var totalNumberOfChoices = questionsArray[currentQuestionNumber].questionChoices.length;
     var buildEachChoiceHTML = "";
     //loop thorugh the answer choices.
+
     for (var i = 0; i < totalNumberOfChoices; i++) {
         buildEachChoiceHTML += '<div class="column column-radio">';
-        buildEachChoiceHTML += '<input type="radio" class="option" name="option" value=' + i + '>';
+        buildEachChoiceHTML += '<input type="radio" class="option" tabindex=' + (i + 1) + ' id=' + i + ' name="option" value=' + i + '>';
         buildEachChoiceHTML += '</div>';
         buildEachChoiceHTML += '<div class="column">';
-        buildEachChoiceHTML += '<label>' + questionsArray[currentQuestionNumber].questionChoices[i] + '</label>';
+        buildEachChoiceHTML += '<label for=' + i + '>' + questionsArray[currentQuestionNumber].questionChoices[i] + '</label>';
         buildEachChoiceHTML += '</div>';
     }
 
-    $('.answers-wrapper').html(buildEachChoiceHTML);
+    //    for (var i = 0; i < totalNumberOfChoices; i++) {
+    //        var buildEachChoiceHTML = "<input type='radio' class='option' id=" + i + " name='option' value=" + i + "> <label for=" + i + ">" + questionsArray[currentQuestionNumber].questionChoices[i] + "</label><br>";
+    //        $('#form').append(buildEachChoiceHTML);
+    //
+    //    }
+
+    $('#choices').html(buildEachChoiceHTML);
     //display the number of the current question
     $('#questionNumberDisplay').text("Question " + (currentQuestionNumber + 1) + " of " + totalNumberOfQuestions);
     //display the correct total number of correct answers
@@ -126,7 +133,7 @@ $(document).ready(function () {
         $('.results-section').hide();
         $('.intro').hide();
         $('.quiz').show();
-        $('.answers-wrapper').empty();
+        $('#choices').empty();
         displayQuestion();
     });
 
@@ -134,7 +141,8 @@ $(document).ready(function () {
     //show quiz questions
 
 
-    $('.quiz').on('click', '.form-submit', function () {
+    $('#answers-wrapper').on('submit', function (event) {
+        event.preventDefault();
         var userAnswer = $('input[class="option"]:checked').val();
         var correctAnswer = questionsArray[currentQuestionNumber].questionCorrectChoice;
         if (userAnswer == correctAnswer) {
@@ -144,9 +152,9 @@ $(document).ready(function () {
         if (!userAnswer) {
             alert("Please select your answer!");
             return;
-
         } else {
-            $(".correctAnswers").text("Previous correct answer: " + questionsArray[currentQuestionNumber].correctDetails).show;
+            alert("Correct answer: " + questionsArray[currentQuestionNumber].correctDetails);
+            //$(".correctAnswers").text("Previous correct answer: " + //questionsArray[currentQuestionNumber].correctDetails).show;
 
 
             $('#quiz-answers').append("<h4 class='results-question'>Q: " + questionsArray[currentQuestionNumber].questionText + "</h4>");

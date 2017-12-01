@@ -22,13 +22,31 @@
     </section>
 
     <section class="quiz" style="display: none;" role="main">
-        <h2 class="question">Who is the "Boy that Lived"?</h2>
-        <div class="answers-wrapper">
+        <form id="answers-wrapper">
+            <h2 class="question">Who is the "Boy that Lived"?</h2>
+            <fieldset id="choices">
+
+                <input class="option" type="radio" value="0" name="option">
+                <br>
+                <input class="option" type="radio" value="1" name="option">
+                <br>
+                <input class="option" type="radio" value="2" name="option">
+                <br>
+                <input class="option" type="radio" value="3" name="option">
+                <br>
+
+            </fieldset>
+            <button class="form-submit" type="submit">Next</button>
+        </form>
+
+
+        <!--
+            <div class="answers-wrapper">
 
             <div class="column column-radio" role="list">
             <input type="radio" class="option" name="option"></div>
 
-            <div class="column"><label for="answer1">Ron Weasley</label></div>
+            <div class="column"><label for="answer1" class="column">Ron Weasley</label></div>
 
 
             <div class="column column-radio"><input type="radio" class="option" name="option"></div>
@@ -43,8 +61,8 @@
             <div class="column"><label for="answer4">Albus Dumbledore</label></div>
 
         </div>
+-->
 
-        <button class="form-submit">Next</button>
 
         <div class="form-errors">
             <h3 class="current-question" id="questionNumberDisplay">Question 1/10</h3>
